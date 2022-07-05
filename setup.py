@@ -9,7 +9,8 @@ setup(
     url="https://github.com/pylon/univnet/",
     author="azraelkuan",
     packages=["univnet"],
-    data_files=[("univnet", ["pretrained/univ_c32_0288.pt"])],
+    data_files=[("univnet", ["pretrained/univ_c32_0288.pt", "config/default_c32.yaml"])],
+    install_requires=["omegaconf"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
