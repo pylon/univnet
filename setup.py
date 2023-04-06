@@ -4,7 +4,7 @@ from distutils.core import setup
 
 setup(
     name="univnet",
-    version="0.1.1",
+    version="0.1.2",
     description=("Unofficial PyTorch Implementation of UnivNet Vocoder"),
     url="https://github.com/pylon/univnet/",
     author="azraelkuan",

@@ -51,7 +51,6 @@ class Generator(nn.Module):
         z = self.conv_pre(z)                # (B, c_g, L)
 
         for res_block in self.res_stack:
-            res_block.to(z.device)
             z = res_block(z, c)             # (B, c_g, L * s_0 * ... * s_i)
 
         z = self.conv_post(z)               # (B, 1, L * 256)
@@ -65,8 +64,6 @@ class Generator(nn.Module):
             self.remove_weight_norm()
 
     def remove_weight_norm(self):
-        print('Removing weight norm...')
-
         nn.utils.remove_weight_norm(self.conv_pre)
 
         for layer in self.conv_post:
